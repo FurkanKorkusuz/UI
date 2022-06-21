@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Web.UI.MVC.Jquery</title>
+   @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />*@
+    <link href="~/Content/BasePage/BasePage.css?1.01" rel="stylesheet" />
+	<link href="~/Content/Font-awsome-5.13.0/all.min.css?1.01" rel="stylesheet" />
+	<link href="~/Content/bootstrap-4.3.1/css/bootstrap.min.css?1.01" rel="stylesheet" />
+	<link href="~/Content/BasePage/select2.min.css?1.01" rel="stylesheet" />
+	<link href="~/Content/BasePage/bootstrap-datepicker.min.css?1.01" rel="stylesheet" />
+
+    
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/Scripts/bootstrap-4.3.1/js/bootstrap.bundle.min.js?1.01"></script>
+	<script src="~/Scripts/BasePage/BasePage.js?1.01"></script>
+	<script src="~/Scripts/BasePage/BackendHelper.js?1.01"></script>
+	<script src="~/Scripts/BasePage/ModalHelper.js?1.01"></script>
+	<script src="~/Scripts/BasePage/select2.min.js?1.01"></script>
+	<script src="~/Scripts/BasePage/bootstrap-datepicker.min.js?1.01"></script>
+	<script src="~/Scripts/BasePage/Request.js?1.01"></script>
+</head>
+<body>
+    <nav id="baseNav" class="navbar navbar-expand-md navbar-left" >
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: 5px solid #fff;">
+            <span style="color: #fff;"><i class="fas fa-bars"></i></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">           
+            @Html.Raw(MVC.Web.UI.Controllers.BasePage.BasePageMenu())
+        </div>
+    </nav>
+
+
+
+    <!-- ======= Ajax Loading Image======= -->
+    <div id="AjaxLoadingImage" style="display: none;" class="backdrop">
+        <i class="fa fa-cog fa-spin"></i>
+    </div>
+
+    <!-- ======= Scroll Top Button ======= -->
+    <i onclick="BasePage.GoScrollTop()" id="scrollTopButton" title="Sayfa başına dön" class="fas fa-chevron-circle-up"></i>
+
+
+
+    <main role="main">
+        <div class="row">
+            <div id="sideBar"  >
+               <ul class="nav flex-column">
+                    <li id="siteBrand" class="nav-item">
+                      <a href="#">Alkapida Panel</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class=" nav-link"  data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" ar  ia-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-cubes"></i> Ürünler <i class="fas fa-angle-right"></i>
+                        </a>
+                        <div class="collapse" id="navbarToggleExternalContent">
+                        <ul>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/Product/List">Active</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                            </li>
+                        </ul>
+                        </div>
+                    </li>
+                     <li class="nav-item">
+                        <a class=" nav-link"  data-toggle="collapse" data-target="#navbarToggleExternalContent1" aria-controls="navbarToggleExternalContent1" ar  ia-expanded="false" aria-label="Toggle navigation">
+                        Link
+                        </a>
+                        <div class="collapse" id="navbarToggleExternalContent1">
+                        <ul>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Active</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                            </li>
+                        </ul>
+                        </div>
+                    </li>
+                     <li class="nav-item">
+                        <a class=" nav-link"  data-toggle="collapse" data-target="#navbarToggleExternalContent2" aria-controls="navbarToggleExternalContent2" ar  ia-expanded="false" aria-label="Toggle navigation">
+                        Link
+                        </a>
+                        <div class="collapse" id="navbarToggleExternalContent2">
+                        <ul>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Active</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                            </li>
+                        </ul>
+                        </div>
+                    </li>
+                     <li class="nav-item">
+                        <a class=" nav-link"  data-toggle="collapse" data-target="#navbarToggleExternalContent3" aria-controls="navbarToggleExternalContent3" ar  ia-expanded="false" aria-label="Toggle navigation">
+                        Link
+                        </a>
+                        <div class="collapse" id="navbarToggleExternalContent3">
+                        <ul>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Active</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                            </li>
+                        </ul>
+                        </div>
+                    </li>
+                     <li class="nav-item">
+                        <a class=" nav-link"  data-toggle="collapse" data-target="#navbarToggleExternalContent4" aria-controls="navbarToggleExternalContent4" ar  ia-expanded="false" aria-label="Toggle navigation">
+                        Link
+                        </a>
+                        <div class="collapse" id="navbarToggleExternalContent4">
+                        <ul>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Active</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                            </li>
+                        </ul>
+                        </div>
+                    </li>
+                     <li class="nav-item">
+                        <a class=" nav-link"  data-toggle="collapse" data-target="#navbarToggleExternalContent5" aria-controls="navbarToggleExternalContent5" ar  ia-expanded="false" aria-label="Toggle navigation">
+                        Link
+                        </a>
+                        <div class="collapse" id="navbarToggleExternalContent5">
+                        <ul>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Active</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                            </li>
+                        </ul>
+                        </div>
+                    </li>
+                     <li class="nav-item">
+                        <a class=" nav-link"  data-toggle="collapse" data-target="#navbarToggleExternalContent6" aria-controls="navbarToggleExternalContent6" ar  ia-expanded="false" aria-label="Toggle navigation">
+                        Link
+                        </a>
+                        <div class="collapse" id="navbarToggleExternalContent6">
+                        <ul>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Active</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                            </li>
+                        </ul>
+                        </div>
+                    </li>
+                     <li class="nav-item">
+                        <a class=" nav-link"  data-toggle="collapse" data-target="#navbarToggleExternalContent7" aria-controls="navbarToggleExternalContent7" ar  ia-expanded="false" aria-label="Toggle navigation">
+                        Link
+                        </a>
+                        <div class="collapse" id="navbarToggleExternalContent7">
+                        <ul>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Active</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                            </li>
+                        </ul>
+                        </div>
+                    </li>
+                     <li class="nav-item">
+                        <a class=" nav-link"  data-toggle="collapse" data-target="#navbarToggleExternalContent8" aria-controls="navbarToggleExternalContent8" ar  ia-expanded="false" aria-label="Toggle navigation">
+                        Link
+                        </a>
+                        <div class="collapse" id="navbarToggleExternalContent8">
+                        <ul>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Active</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                            </li>
+                        </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                     <a class="nav-link" href="#">Link</a>
+                    </li>
+
+</ul>
+            </div>
+
+            <div id="renderBody" class="render-body">
+                @RenderBody()
+            </div>
+        </div>
+
+
+    </main>
+  
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="navbar-inverse" style="background-color: #005555;">
+        <div class="footer-top">
+            <div class="">
+                <div class="row">
+
+                    @*<div class="col-lg-3 col-md-6">
+                            <div class="footer-info">
+                                <h3>İletişim</h3>
+                                <p>
+                                    BURÇİSTANBUL Kat:16
+                                    <br>
+                                    Esenyurt / İSTANBUL<br>
+                                    <br>
+                                    <strong>Telefon:</strong> +90 554 817 39 48<br>
+                                    <strong>Email:</strong> furkankorkusuz2@gmail.com<br>
+                                </p>
+                                <div class="social-links mt-3">
+                                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                                    <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                                    <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>*@
+
+                    @*<div class="col-lg-2 col-md-6 footer-links">
+                            <h4>Sayfalar</h4>
+                            <ul>
+                                <li><i class="bx bx-chevron-right"></i><a href="#">Anasayfa</a></li>
+                                <li><i class="bx bx-chevron-right"></i><a href="#">Hakkımda</a></li>
+                                <li><i class="bx bx-chevron-right"></i><a href="#">Bloglar</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 footer-links">
+                            <h4>Kategoriler</h4>
+                            <ul>
+                            </ul>
+                        </div>*@
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="copyright col-12 text-center">
+                &copy; Copyright Designed by FURKAN KORKUSUZ
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
